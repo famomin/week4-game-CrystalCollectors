@@ -1,4 +1,4 @@
-var startingRandomNumber = Math.floor((Math.random()*100) + 19);
+var startingRandomNumber = Math.floor((Math.random()*101) + 19);
 var wins = 0;
 var losses = 0;
 var crystalOneValue = Math.floor((Math.random()*12) + 1);
@@ -9,7 +9,7 @@ var scoreAddition;
 var finalScore;
 
 var reset = function(){
-	startingRandomNumber = Math.floor((Math.random()*100) + 19);
+	startingRandomNumber = Math.floor((Math.random()*101) + 19);
 	crystalOneValue = Math.floor((Math.random()*12) + 1);
 	crystalTwoValue = Math.floor((Math.random()*12) + 1);
 	crystalThreeValue = Math.floor((Math.random()*12) + 1);
@@ -33,6 +33,11 @@ var gameResultCheck = function(){
 		reset();
 
 	}
+
+	else {
+		$('.gameStatus').text("In Progress");
+
+	}
 };
 
 
@@ -40,8 +45,6 @@ var gameResultCheck = function(){
 $(document).ready(function(){
 	reset();
 	$('#randomScoreToMatch').text(startingRandomNumber);
-	//$('#winsCounter').text(wins);
-	//$('#lossCounter').text(losses);
 
 	//functions for crystal 1 buttons
 	$('#crystal1').click(function(){
