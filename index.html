@@ -2,76 +2,118 @@
 <html>
 <head>
 	<title>Crystal Collector Game</title>
-	<link rel="stylesheet" type="text/css" href="Assets/CSS/reset.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
+		<link rel="stylesheet" type="text/css" href="Assets/CSS/reset.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
 </head>
 <body>
 	<header>
-		<div class="container">
-			<h1>Welcome to Crystal Collector Game</h1>
+		<div class="page-header text-center headerfont">
+		  	<h1>Crystal Collector</h1>
 		</div>
 	</header>
 	
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row"> <!-- div row for instructions -->
-			<div class="col-sm-12">
-				<section>
-					<p> You will be given a random number when you start the game. </p>
-
-					<p>There are 4 crystals which holds a random value between 1 and 12. When you click on it it will add that amount to you score. </p>
-
-					<p>You goal is to match your score with the number give to you at the start of the game.</p>
-
-					<p>You will not see the value of the crystal, until you click on it.</p>
-
-					<p>Crystal will hold same value for the game, and will reset when you start a new game.</p>
-				</section>
+			<div class="col-sm-12 col-md-6 col-md-offset-3">
+				<div class="panel panel-primary"> <!-- div for rules section -->
+				  	<div class="panel-heading"> <!-- div for rules heading -->
+				    	<h2 class="panel-title">Rules</h2>
+				  	</div> <!-- closing div for rules heading -->
+				  	<div class="panel-body"> <!-- div for list of rules -->
+					    <h3>	
+					    	<ul class="bullets">
+					    		<li>You will be given a random number when you start the game.</li>
+					    		<li>There are 4 crystals which holds a random value between 1 and 12. When you click on it it will add that amount to you score.</li>
+					    		<li>You objective is to match your score with the number give to you at the start of the game.</li>
+					    		<li>You will not see the value of the crystal, until you click on it.</li>
+					    		<li>Crystal will hold same value for the game, and will reset when you start a new game.</li>	
+					    	</ul>
+					    <h3>	
+				  	</div> <!-- closing div for list of rules -->
+				</div> <!-- closing div for rules section -->
 			</div>	
 		</div> <!-- closing div row for instructions -->
 
 		<div class="row"> <!-- row for ramdom number to start and wins/losses. -->
-			<div class="col-sm-4"> <!-- column for random number -->
-				<h3>Number to Match: <span id="randomScoreToMatch"></span> </h3>
-			</div>
+			<div class="col-sm-5 col-md-2 col-md-offset-3"> <!-- column for random number -->
+				<div class="panel panel-success"> <!-- random number generator section -->
+				  	<div class="panel-heading"><!--  heading for random number -->
+				    	<h2 class="panel-title">Number to Match:</h2>
+				  	</div> <!-- closing heading for random number -->
+				 	<div class="panel-body"> <!-- panel body for number -->
+				    	<h3><span id="randomScoreToMatch"></span></h3>
+				  	</div> <!-- closing panel body for number -->
+				</div> <!-- closing section for random number generator -->
+			</div> <!-- closing column for random number -->
 
-			<div class="col-sm-3 col-sm-offset-1"> <!-- column for wins and losses -->
-					<h4>Wins: <span id="winsCounter"></span> </h4>
-
-					<h4>Losses: <span id="lossCounter"></span> </h4>
+			<div class="col-sm-5 col-sm-offset-2 col-md-2 col-md-offset-2"> <!-- column for wins and losses -->
+				<div class="panel panel-info"> <!-- panel for game record -->
+				  	<div class="panel-heading"> <!-- record heading -->
+				    	<h2 class="panel-title">Record</h2>
+				  	</div>
+				 	<div class="panel-body"> <!-- showing wins and losses -->
+				 		<h3><p>Wins: <span id="winsCounter"></span></p></h3>
+				 		<h3><p>Losses: <span id="lossCounter"></span> </p></h3>
+					</div>  	
+				</div> <!-- closing record panel -->
 			</div> <!-- closing wins/losses column -->
 		</div><!-- closing row for random numbers and wins/losses -->
 
 		<div class="row"> <!-- row for pics of crystals -->
-			<div class="col-sm-1"> <!-- column for crystal 1 -->
-				<button id="crystal1"><img src="Assets/Images/Crystal1.png" class="img-responsive"></button>
+			<div class="col-xs-2 col-md-1 col-md-offset-2"> <!-- column for crystal 1 -->
+				<button id="crystal1"><img class="img-responsive" src="Assets/Images/Crystal1.png" class="img-responsive"></button>
 			</div> <!-- closing column for crystal 1 -->
 
-			<div class="col-sm-1 col-sm-offset-1"> <!-- column for crystal 2 -->
-				<button id="crystal2"><img src="Assets/Images/Crystal2.png" class="img-responsive" id="crystal2"></button>
+			<div class="col-xs-2 col-xs-offset-1 col-md-1"> <!-- column for crystal 2 -->
+				<button id="crystal2"><img class="img-responsive" src="Assets/Images/Crystal2.png" class="img-responsive" id="crystal2"></button>
 			</div> <!-- closing column for crystal 2 -->
 
-			<div class="col-sm-1 col-sm-offset-1"> <!-- column for crystal 3 -->
-				<button id="crystal3"><img src="Assets/Images/Crystal3.png" class="img-responsive" id="crystal3"></button>
+			<div class="col-xs-2 col-xs-offset-2 col-md-1"> <!-- column for crystal 3 -->
+				<button id="crystal3"><img class="img-responsive" src="Assets/Images/Crystal3.png" class="img-responsive" id="crystal3"></button>
 			</div><!-- closing column for crystal 3 -->
 
-			<div class="col-sm-1 col-sm-offset-1"> <!-- column for crystal 4 -->
-				<button id="crystal4"><img src="Assets/Images/Crystal4.png" class="img-responsive" id="crystal4"></button>
+			<div class="col-xs-2 col-xs-offset-1 col-md-1"> <!-- column for crystal 4 -->
+				<button id="crystal4"><img class="img-responsive" src="Assets/Images/Crystal4.png" class="img-responsive" id="crystal4"></button>
 			</div> <!-- closing column for crystal 4 -->
 		</div> <!-- closing row for crystals -->
 
 		<div class="row"> <!-- row to show what number was just pressed -->
-			<div class="col-sm-8">
-				<h3>Your click added: <span class="crystalValue"></span></h3>
-			</div>
-		</div> <!-- closing what number was just pressed -->
+			<div class="col-sm-5 col-md-2 col-md-offset-3"> <!-- column for random added by crystal -->
+				<div class="panel panel-danger"> <!-- section to show last crystal clicked -->
+				  	<div class="panel-heading"><!--  heading for crystal number -->
+				    	<h2 class="panel-title">Your Last Click Added</h2>
+				  	</div> <!-- closing heading crystal number -->
+				 	<div class="panel-body"> <!-- panel body crystal number-->
+						<h3><span class="crystalValue"></span></h3>
+				  	</div> <!-- closing panel body for crystal number -->
+				</div> <!-- closing section for showing last crytal clicked -->
+			</div> <!-- closing column for random number added  by crystal -->
+			
+			<div class="col-sm-5 col-sm-offset-2 col-md-2 col-md-offset-2"> <!-- column to show total score so far -->
+				<div class="panel panel-warning"> <!-- section for added score so far  -->
+				  	<div class="panel-heading"><!--  heading for added score so far -->
+				    	<h2 class="panel-title">You Score so far: </h2>
+				  	</div> <!-- closing heading for added score so far -->
+				 	<div class="panel-body"> <!-- panel body for added score so far -->
+						<h3><span class="FinalRunningScore"></span></h3>
+				  	</div> <!-- closing panel body added score so far -->
+				</div> <!-- closing section for total score so far -->
+			</div> <!-- closing column for total score so far -->
+		</div> <!-- cloing row for number pressed and total score -->
 
-		<div class="row"> <!-- row to show total score so far-->
-			<div class="col-sm-8">
-				<h3>You Score so far: <span class="FinalRunningScore"></span></h3>
-				<h3><span class="gameStatus"></span>
-			</div>
-		</div> <!-- closing row to show total score so far -->
+		<div class="row"> <!-- row for game results -->
+			<div class="col-sm-12 col-md-6 col-md-offset-3"><!-- column for current game result -->
+				<div class="panel panel-primary"> 
+				  	<div class="panel-heading"><!--  heading for game result -->
+				    	<h2 class="panel-title">Current Game Result</h2>
+				  	</div> <!-- closing heading for game result -->
+				 	<div class="panel-body"> <!-- panel body game result -->
+						<h3><span class="gameStatus"></span></h3>
+				  	</div> <!-- closing panel body for game result -->
+				</div> 
+			</div> <!-- closing column for game result -->
+		</div> <!-- closing row to show game results -->
 	
 	</div> <!-- closing container -->
 
